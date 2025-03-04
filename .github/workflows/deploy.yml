@@ -48,7 +48,7 @@ jobs:
       - name: Build and Push Docker Image
         run: |
           set -e  # ⚠️ 빌드 실패 시 즉시 종료
-          DOCKER_IMAGE=${{ secrets.DOCKER_USERNAME }}/react-nginx:latest
+          DOCKER_IMAGE=kkusaeng/react-docker:latest
           echo "Building image: $DOCKER_IMAGE"
           docker build -t $DOCKER_IMAGE .
           docker push $DOCKER_IMAGE
