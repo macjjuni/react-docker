@@ -6,8 +6,12 @@ RUN npm install
 COPY . ./
 RUN npm run build
 
+# 빌드된 파일 확인 (디버깅용)
+RUN ls -al /app/dist
+
 # 2. Nginx로 배포
 FROM nginx:alpine
-COPY --from=builder /app/dist /usr/share/nginx/html  # dist 경로 수정
+WORKDIR /usr/share/nginx/html
+COPY --from=builder /app/dist .
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
