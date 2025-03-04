@@ -82,3 +82,7 @@ docker ps
 ```bash
 docker-compose down
 ```
+
+## 로그
+
+<img src="https://github.com/user-attachments/assets/4d5c71ee-40b6-4a26-8f02-f6f9b5cf789e" alt="도커 컴포즈 자동 배포" >
