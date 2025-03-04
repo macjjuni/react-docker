@@ -35,5 +35,8 @@ jobs:
 
       - name: Build and Push Docker Image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/react-nginx:latest .
-          docker push ${{ secrets.DOCKER_USERNAME }}/react-nginx:latest
+          DOCKER_IMAGE=${{ secrets.DOCKER_USERNAME }}/react-nginx:latest
+          echo "Building image: $DOCKER_IMAGE"
+          docker build -t $DOCKER_IMAGE .
+          docker push $DOCKER_IMAGE
+
